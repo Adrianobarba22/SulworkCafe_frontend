@@ -1,27 +1,79 @@
-# SulworkCafeFrontend
+# Sulwork Café - Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
+Frontend desenvolvido em Angular 17 para o desafio técnico Sulwork Café ☕️.
 
-## Development server
+## ✅ Funcionalidades
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Listagem de colaboradores
+- Cadastro e edição de colaboradores
+- Listagem de itens de café da manhã
+- Cadastro e edição de itens
+- Validação de CPF
 
-## Code scaffolding
+## 🧰 Tecnologias
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular 17
+- Angular Material
+- TypeScript
+- Standalone Components
+- Responsivo
 
-## Build
+## 🚀 Como rodar
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Pré-requisitos
 
-## Running unit tests
+- Node.js (versão 20+)
+- Angular CLI (`npm install -g @angular/cli`)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Passos
 
-## Running end-to-end tests
+```bash
+cd frontend
+npm install
+ng serve
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Acesse em: http://localhost:4200
 
-## Further help
+🐳 Rodando com Docker
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+docker build -t sulwork-frontend .
+docker run -p 4200:80 sulwork-frontend
+
+
+📁 Estrutura
+src/app/pages: Páginas standalone (listar/cadastrar)
+
+src/app/services: Comunicação com o backend
+
+src/app/models: Interfaces de tipos
+
+✅ Testando com o Postman
+📌 1. Endereço base da API
+http://localhost:8080/api
+
+
+📌 2. Endpoints comuns para testar
+🔹 Colaboradores
+GET /colaboradores
+
+Lista todos os colaboradores
+
+POST /colaboradores
+
+Cadastra um novo colaborador
+
+Exemplo de JSON:
+{
+  "nome": "João da Silva",
+  "cpf": "12345678900"
+}
+
+PUT /colaboradores/{id}
+
+Atualiza um colaborador existente
+
+DELETE /colaboradores/{id}
+
+Deleta um colaborador pelo ID
+
+
