@@ -1,0 +1,20 @@
+<h2>Cadastrar Item de Café da Manhã</h2>
+
+<form [formGroup]="form" (ngSubmit)="salvar()">
+  <label for="colaboradorId">Colaborador</label>
+  <select formControlName="colaboradorId" id="colaboradorId">
+    <option value="" disabled selected>Selecione um colaborador</option>
+    <option *ngFor="let colab of colaboradores" [value]="colab.id">
+      {{ colab.nome }} - {{ colab.cpf }}
+    </option>
+  </select>
+
+  <label for="descricao">O que vai trazer?</label>
+  <input type="text" formControlName="descricao" id="descricao" />
+
+  <label for="dataEvento">Data do Café</label>
+  <input type="date" formControlName="dataEvento" id="dataEvento" />
+
+  <button type="submit" [disabled]="form.invalid">Salvar</button>
+</form>
+

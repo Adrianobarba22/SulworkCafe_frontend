@@ -1,0 +1,18 @@
+<h2>Itens do Café da Manhã</h2>
+
+<mat-card *ngFor="let item of itens">
+  <mat-card-title>{{ item.nomeColaborador }}</mat-card-title>
+  <mat-card-content>
+    <p><strong>CPF:</strong> {{ item.cpf }}</p>
+    <p><strong>Item:</strong> {{ item.item }}</p>
+    <p><strong>Data:</strong> {{ item.data | date }}</p>
+
+    <mat-checkbox
+      [disabled]="!isHojeOuAntes(item.data)"
+      [(ngModel)]="item.entregue"
+      (change)="marcarEntregue(item)"
+    >
+      Entregue
+    </mat-checkbox>
+  </mat-card-content>
+</mat-card>
