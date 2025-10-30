@@ -9,7 +9,7 @@ COPY . .
 RUN npm run build
 
 # Segunda etapa: servidor NGINX
-FROM nginx:alpine
+FROM nginx:1.29.3-alpine3.22
 COPY --from=build /app/dist/sulwork-cafe-frontend /usr/share/nginx/html
 
 # Remove configuração default do nginx e define a nossa
